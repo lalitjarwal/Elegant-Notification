@@ -231,7 +231,7 @@ class ElegantNotification extends StatefulWidget {
         pageBuilder: (context, _, __) => AlertDialog(
           backgroundColor: Colors.transparent,
           contentPadding: const EdgeInsets.all(0),
-          // insetPadding: const EdgeInsets.symmetric(vertical: 60,horizontal: 20),
+          insetPadding:insetPadding,
           elevation: 0,
           content: this,
         ),
