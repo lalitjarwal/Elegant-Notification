@@ -30,6 +30,8 @@ class ElegantNotification extends StatefulWidget {
     this.titleStyle = defaultTitleStyle,
     this.descriptionStyle = defaultDescriptionStyle,
     this.iconSize = defaultIconSize,
+    this.insetPadding =
+        const EdgeInsets.symmetric(vertical: 24, horizontal: 40),
   }) : super(key: key) {
     notificationType = NOTIFICATION_TYPE.custom;
   }
@@ -47,6 +49,8 @@ class ElegantNotification extends StatefulWidget {
     this.animationDuration = defaultAnimationDuration,
     this.titleStyle = defaultTitleStyle,
     this.descriptionStyle = defaultDescriptionStyle,
+    this.insetPadding =
+        const EdgeInsets.symmetric(vertical: 24, horizontal: 40),
   }) : super(key: key) {
     shadowColor = Colors.grey;
     background = Colors.white;
@@ -71,6 +75,8 @@ class ElegantNotification extends StatefulWidget {
     this.animationDuration = defaultAnimationDuration,
     this.titleStyle = defaultTitleStyle,
     this.descriptionStyle = defaultDescriptionStyle,
+    this.insetPadding =
+        const EdgeInsets.symmetric(vertical: 24, horizontal: 40),
   }) : super(key: key) {
     shadowColor = Colors.grey;
     background = Colors.white;
@@ -95,6 +101,8 @@ class ElegantNotification extends StatefulWidget {
     this.animationDuration = defaultAnimationDuration,
     this.titleStyle = defaultTitleStyle,
     this.descriptionStyle = defaultDescriptionStyle,
+    this.insetPadding =
+        const EdgeInsets.symmetric(vertical: 24, horizontal: 40),
   }) : super(key: key) {
     shadowColor = Colors.grey;
     background = Colors.white;
@@ -171,6 +179,7 @@ class ElegantNotification extends StatefulWidget {
   /// for types constructors (Success, Info, Delete) this parameter is unchangeable
   ///
   late double radius;
+  final EdgeInsets insetPadding;
 
   ///The duration how much the notification will take time, duration in milliseconds
   ///by default the duration is `2500 milliseconds`
@@ -222,7 +231,7 @@ class ElegantNotification extends StatefulWidget {
         pageBuilder: (context, _, __) => AlertDialog(
           backgroundColor: Colors.transparent,
           contentPadding: const EdgeInsets.all(0),
-          insetPadding: const EdgeInsets.all(70),
+          // insetPadding: const EdgeInsets.symmetric(vertical: 60,horizontal: 20),
           elevation: 0,
           content: this,
         ),
@@ -303,7 +312,7 @@ class _ElegantNotificationState extends State<ElegantNotification>
         SlideTransition(
           position: offsetAnimation,
           child: Container(
-            width: MediaQuery.of(context).size.width * 0.7,
+            width: MediaQuery.of(context).size.width * 0.9,
             height: MediaQuery.of(context).size.height * 0.12,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(widget.radius),
